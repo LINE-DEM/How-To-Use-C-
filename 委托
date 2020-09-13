@@ -1,0 +1,21 @@
+public class DelegateTest : MonoBehaviour
+{
+    //定义一个 委托
+    delegate void DelegateExample(int a);
+    void Start()
+    {
+        //另一个 方法名 作为 参数 传入
+        Foobar(ShowTheNumber);
+    }
+
+    //需要调用 别的方法 的方法
+    void Foobar(DelegateExample myDelegate)
+    {
+        myDelegate(50);
+    }
+    //一个普通的 方法
+    void ShowTheNumber(int a)
+    {
+        Debug.Log(a);
+    }
+}
